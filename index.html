@@ -3,20 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scan2Text</title>
+    <title>Scan2Text - OCR Chrome Extension</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            color: #333;
+            color: #ffffff;
+            background-color: #2b2b2b;
         }
         
         .header {
-            background: #f8f9fa;
-            padding: 2rem;
+            background: #222222;
+            padding: 3rem;
             text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header h1 span.green {
+            color: #4CAF50;
+        }
+
+        .header h1 span.white {
+            color: #ffffff;
+        }
+
+        .header p {
+            color: #9e9e9e;
+            font-size: 1.2rem;
+            margin: 0;
         }
         
         .container {
@@ -33,41 +53,140 @@
         }
         
         .plan {
-            border: 1px solid #ddd;
+            background: #333333;
             padding: 1.5rem;
             border-radius: 8px;
             text-align: center;
             flex: 1;
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            min-height: 400px;
+        }
+
+        .plan:hover {
+            transform: translateY(-5px);
+        }
+        
+        .plan h3 {
+            color: #4CAF50;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .plan p {
+            color: #9e9e9e;
+            margin: 0.5rem 0;
+        }
+
+        .price {
+            font-size: 1.8rem;
+            color: white;
+            margin: 1rem 0;
+        }
+
+        .plan ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 1rem 0;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .plan ul li {
+            margin: 0;
+            padding-left: 1.5rem;
+            position: relative;
+            text-align: left;
+        }
+
+        .plan ul li:before {
+            content: "•";
+            color: #4CAF50;
+            position: absolute;
+            left: 0;
         }
         
         .cta-button {
-            background: #007bff;
+            background: #4CAF50;
             color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 12px 24px;
+            border-radius: 25px;
             text-decoration: none;
             display: inline-block;
-            margin-top: 1rem;
+            margin-top: auto;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            width: fit-content;
+            align-self: center;
+        }
+
+        .cta-button:hover {
+            background: #45a049;
         }
         
         .features {
             margin: 2rem 0;
+            background: #333333;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #4CAF50;
+            margin-bottom: 1.5rem;
+        }
+
+        .features ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .features ul li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .features ul li:before {
+            content: "•";
+            color: #4CAF50;
+            position: absolute;
+            left: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #9e9e9e;
+        }
+
+        footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>Scan2Text</h1>
-        <p>Extract text from images instantly with our powerful OCR Chrome extension</p>
+        <h1><span class="green">Scan</span><span class="white">2</span><span class="green">Text</span></h1>
+        <p>Drag and Drop.<br>Easy and Simple.</p>
     </div>
 
     <div class="container">
         <div class="features">
             <h2>Features</h2>
             <ul>
-                <li>Instant text extraction from any image</li>
+                <li>Simple drag and drop interface</li>
+                <li>Instant text extraction from images</li>
                 <li>Support for multiple languages</li>
-                <li>Easy-to-use interface</li>
                 <li>Copy extracted text with one click</li>
                 <li>Privacy-focused: all processing done locally</li>
             </ul>
@@ -77,41 +196,36 @@
             <div class="plan">
                 <h3>Free Plan</h3>
                 <p>Perfect for occasional use</p>
+                <div class="price">Free</div>
                 <ul>
-                    <li>5 uses per day</li>
+                    <li>5 scans per day</li>
                     <li>Basic OCR functionality</li>
                 </ul>
-                <p>Free</p>
                 <a href="[Chrome Web Store Link]" class="cta-button">Install Now</a>
             </div>
 
             <div class="plan">
                 <h3>Basic Plan</h3>
                 <p>For regular users</p>
+                <div class="price">$5/month</div>
                 <ul>
-                    <li>30 uses per day</li>
+                    <li>30 scans per day</li>
                     <li>Priority support</li>
                 </ul>
-                <p>$5/month</p>
                 <a href="[Chrome Web Store Link]" class="cta-button">Get Started</a>
             </div>
 
             <div class="plan">
                 <h3>Unlimited Plan</h3>
                 <p>For power users</p>
+                <div class="price">$10/month</div>
                 <ul>
-                    <li>Unlimited uses</li>
+                    <li>Unlimited scans</li>
                     <li>Priority support</li>
                     <li>Advanced features</li>
                 </ul>
-                <p>$10/month</p>
                 <a href="[Chrome Web Store Link]" class="cta-button">Get Started</a>
             </div>
-        </div>
-
-        <div class="contact">
-            <h2>Contact Us</h2>
-            <p>Have questions? Email us at: ryanngu101@gmail.com</p>
         </div>
 
         <footer>
